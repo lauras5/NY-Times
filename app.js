@@ -10,6 +10,7 @@ $(document).ready(function (){
             search = $(".search").val()
             beginDate = $(".beginDate").val() + '0101'
             endDate = $(".endDate").val() + '1231'
+            artNum = $(".artNum").val()
 
             console.log(search)
             console.log(beginDate)
@@ -23,23 +24,20 @@ $(document).ready(function (){
                 method : 'GET'
             }).done(function(result) {
                 var objData = result.response.docs
-                for(var i = 0; i < objData.length; i++){
+                for(var i = 0; i < artNum; i++){
                     //gets articles
                     // $(".result").append(objData[i].web_url)
                     // $(".result").append(objData[i].headline.main)
                     // $(".result").append(objData[i].byline.original)
                     var articleName = $("<a class='link' href='" + objData[i].web_url + "'><h1 class='title'>" + objData[i].headline.main + "</h1></a>")
                     var articleAuthor = $("<p class='author'>" + objData[i].byline.original + "</p>")
+                    console.log(objData[i].multimedia.url)
                     $(".result").append(articleName)
                     articleName.append(articleAuthor)
                     event.preventDefault()
                 }
-                
-
+                console.log(queryURL) 
             })
-            console.log(objData) //grabs articles 1-10
-            console.log(result) 
-            console.log(queryURL) 
         })
 
         $("#clearAll").on("click", function(){
