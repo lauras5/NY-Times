@@ -29,12 +29,12 @@ $(document).ready(function (){
                     // $(".result").append(objData[i].web_url)
                     // $(".result").append(objData[i].headline.main)
                     // $(".result").append(objData[i].byline.original)
-                    var articleName = $("<a class='link' href='" + objData[i].web_url + "'><h1 class='title'>" + objData[i].headline.main + "</h1></a>")
-                    var articleAuthor = $("<p class='author'>" + objData[i].byline.original + "</p>")
-                    console.log(objData[i].multimedia.url)
+                    var articleName = $("<a class='link' href='" + objData[i].web_url + "'><h2 class='title'>" + objData[i].headline.main + "</h2></a>")
                     $(".result").append(articleName)
+                    var articleAuthor = $("<p class='author'>" + objData[i].byline.original + "</p>")
                     articleName.append(articleAuthor)
                     event.preventDefault()
+                    console.log(result)
                 }
                 console.log(queryURL) 
             })
@@ -44,6 +44,7 @@ $(document).ready(function (){
             $("input").val(' ')
             console.log('clear')
             event.preventDefault()
+            $(".result").html('')
         })
         
     })

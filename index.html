@@ -3,34 +3,59 @@
 
 <head>
     <meta charset='UTF-8'>
+    <meta name="description" content="Group Activity">
+    <meta name="contributors" content="Veronica Przybyl, Laura Salcido, Steve Foster, Jeremie Joseph">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New York Times Search</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
     integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
     crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Gravitas+One|Yeseva+One" rel="stylesheet">
     <!-- Style to fix the issue of text extending past panel length -->
     <style>
+        body {
+            background-image: url('bodybackground.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .jumbotron {
+            margin-top: 2%;
+            background-color: rgba(0, 0, 0, 0.678);
+            background-size: cover;
+
+        }
         .panel-body a 
         {
             word-break:break-all
         }
 
-        h1 {
+        h2 {
             color: black;
             font-weight: bold;
             width: 60%;
             margin: 20px 0 0 40px;
+            font-family: 'Yeseva One', cursive;
+
         }
 
         p {
             color:black;
             width: 70%;
             margin: 0 0 20px 40px;
+
         }
 
         .jumbotron h1 {
             width: 100%;
-            margin: 0
+            margin: 0;
+            font-family: 'Yeseva One', cursive;
+            color: white;
+            text-shadow: 4px 4px rgb(66, 66, 66);
+        }
+
+        #panel-heading {
+            background-color: rgba(54, 54, 54, 0.623);
         }
 
 
@@ -40,7 +65,7 @@
 <!-- Main Bootstrap Search -->
 <div class="container">
     <!-- Jumbotron for Title -->
-    <div class="jumbotron" style="background-color: #20315A ; color: white;">
+    <div class="jumbotron">
         <h1 class="text-center"><strong><i class="fa fa-newspaper-o"></i> New York Times Search</strong></h1>
     </div>
     <!-- Row for Searching New York Times -->
@@ -49,7 +74,7 @@
         <br>
             <!-- First panel is for handling the search parameters -->
             <div class="panel panel-primary">
-                <div class="panel-heading">
+                <div class="panel-heading" id='panel-heading'>
                     <h3 class="panel-title"><strong><i class="fa  fa-list-alt"></i>Search Parameters</strong></h3>
                 </div>
                 <div class='panel-body'>
@@ -95,7 +120,7 @@
             <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
             <div class="panel panel-primary">
                 <!-- Panel Heading for the retrieved articles box -->
-                <div class="panel-heading">
+                <div class="panel-heading" id='panel-heading'>
                     <h3 class="panel-title"><strong><i class="fa fa-table"></i>   Top Articles</strong></h3>
                 </div>
                 <div class="result"></div>
